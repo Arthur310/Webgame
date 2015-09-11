@@ -1,0 +1,171 @@
+<!-- This is GWENT.html file -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>GWENT</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<link rel="shortcut icon" href="img/favicon.ico">
+		<link href="css/jquery.modal.css" type="text/css" rel="stylesheet" />
+		<link href="css/jquery.modal.theme-xenon.css" type="text/css" rel="stylesheet" />
+		<link href="css/jquery.modal.theme-atlant.css" type="text/css" rel="stylesheet" />
+		<link href="css/Main.css" rel="stylesheet">		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<!-- <script src="/socket.io/socket.io.js"></script> -->		
+		<script type="text/javascript" src="js/Main.js"></script>
+		<!-- <script> var socket = io.connect('http://127.0.0.1:3000') </script>	-->	
+	</head>
+	
+	<body>
+		<!-- Loading screen -->
+		<div class="loader-wrap">
+			<div class="loader">
+				<div class="box-1 box"></div>
+				<div class="box-2 box"></div>
+				<div class="box-3 box"></div>
+				<div class="box-4 box"></div>
+				<div class="box-5 box"></div>
+			</div>
+		</div>
+	
+		 <!-- Navigation -->
+		<nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+			<div class="container topnav">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+
+					
+					<a class="navbar-brand topnav" href="#">
+						<% if(typeof(username) !== 'undefined') {%>
+                			<span><%= username %></span>
+            			<% } %>
+					</a>
+					
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right">
+						<% if(typeof(username) == 'undefined') {%>
+                			<li>
+								<a href="#">About</a>
+							</li>
+							<li>
+								<a href="/login">Log in</a>
+							</li>
+							<li>
+								<a href="/signup">Sign Up</a>
+							</li>
+            			<% } %>
+
+            			<% if(typeof(username) !== 'undefined') {%>
+							<li>
+								<a href="/signout" title="sign out">Sign Out</a>
+							</li>
+            			<% } %>
+						
+					</ul>
+				</div>
+				<!-- /.navbar-collapse -->
+			</div>
+			<!-- /.container -->
+		</nav>
+		
+		<!-- Intro Header -->
+		<a name="about"></a>
+		<div class="intro-header">
+			<div class="container">   
+				<div class="intro-message">
+					<h1>GWENT</h1>
+					<h3>The Card Game</h3>
+					<hr class="intro-divider">
+					<h4>From the Witcher series</h4>
+					<p>CD Projekt RED Copyright</p>
+				</div>
+			</div>
+		</div> 
+		
+		<!-- Tutorial -->
+		<a name="services"></a>
+		<div class="Tutorial">
+			<div class="container">
+				<div class="row vertical-align">
+					<div class="col-lg-6 col-sm-6">
+						<div class="clearfix"></div>
+						<h1 class="section-heading">TUTORIAL</h1>
+						<p class="lead">Introduction to GWENT <br> Learn how 
+								the game is set-up and play </p>
+					</div>
+					
+					<div class="col-lg-6 col-sm-6 img-hover">
+						<a href="/Tutorial"> 
+							<img class="img-responsive" onmousedown="return false" onmouseup="return this.onclick() || this.click()" src="img/Main Page/Board.jpg" alt=""
+							style="border:0">
+						</a>							
+					</div>
+				</div>
+			</div>	
+		</div>	
+		
+		<!-- Card -->
+		<a name="services"></a>
+		<div class="Card">
+			<div class="container">
+				<div class="row vertical-align">					
+					<div class="col-lg-6 col-sm-push-6 col-sm-6">
+						<div class="clearfix"></div>
+						<h1 class="section-heading">CARDS</h1>
+						<p class="lead">Learn about cards <br> Types, placement 
+								and how to use them </p>
+					</div>
+					
+					<div class="col-lg-6 col-sm-pull-6 col-sm-6 img-hover">
+						<a href="/Cards"> 
+							<img class="img-responsive" onmousedown="return false" onmouseup="return this.onclick() || this.click()" src="img/Main Page/Cards.jpg" alt=""
+							style="border:0">
+						</a>	
+					</div>
+				</div>
+			</div>	
+		</div>
+
+		<!-- PVP -->
+		<a name="services"></a>
+		<div class="PVP">
+			<div class="container">
+				<div class="row vertical-align">
+					<div class="col-lg-6 col-sm-6">
+						<div class="clearfix"></div>
+						<h1 class="section-heading">TAVERN</h1>
+						<p class="lead">Customize your deck <br> then challenge others for the title of GWENT master </p>
+					</div>
+					
+					<div class="col-lg-6 col-sm-6 img-hover">
+						<% if(typeof(username) == 'undefined') {%>
+							<a>
+								<img class="img-responsive" id="alert" onmousedown="return false" onmouseup="return false" src="img/Main Page/Tavern.png" alt="" style="border:0">
+							</a>
+						<% } %>			
+
+						<% if(typeof(username) != 'undefined'){%>
+							<a href="/Tavern"> 
+								<img class="img-responsive" onmousedown="return false" onmouseup="ereturn false" src="img/Main Page/Tavern.png" alt="" style="border:0">
+							</a>
+						<% } %>													
+					</div>
+				</div>
+			</div>	
+		</div>
+		
+	</body>
+</html>

@@ -1,0 +1,395 @@
+<!-- This is the Cards.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>TAVERN</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>  
+		<link rel="shortcut icon" href="img/favicon.ico">
+		<link href="css/Tavern.css" rel="stylesheet">
+		<script src="js/Tavern.js"></script>
+		<script src="/socket.io/socket.io.js"></script>
+	</head>
+	
+	<body>
+		<!-- Loading screen -->
+		<div class="loader-wrap">
+			<div class="loader">
+				<div class="box-1 box"></div>
+				<div class="box-2 box"></div>
+				<div class="box-3 box"></div>
+				<div class="box-4 box"></div>
+				<div class="box-5 box"></div>
+			</div>
+		</div>
+
+
+
+		<!-- DECK CUSTOMIZATION -->
+		<div id="selection">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 nopadding">
+						<div class="row lefty">
+							<div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 nopadding" id="divLeft">
+								<!--<h4 id="Left"></h4> -->
+							</div>
+
+							<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 nopadding img-hover">
+								<a>
+									<img class="img-responsive img-left" onmousedown="return false" onmouseup="return false" src="img/Tavern/Arrow Left.png" alt="" style="border:0">
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 trytest nopadding">
+						<div class="row middle" id="divMiddle">
+							<h3 id="Choose"> Choose Faction </h3>
+							<!-- <h2 id="Faction"></h2> -->
+						</div>
+					</div>
+
+					<div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 nopadding">
+						<div class="row righty">
+							<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 nopadding img-hover">
+								<a>
+									<img class="img-responsive img-right" onmousedown="return false" onmouseup="return false" src="img/Tavern/Arrow Right.png" alt="" style="border:0">
+								</a>
+							</div>
+
+							<div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 nopadding" id="divRight">
+								<!--<h4 id="Right"></h4>-->
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+
+		<div id="cards">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 nopadding">
+						<div class="row middle">
+							<h2 id="CardCollectionl"> Card Collection </h2>
+							<h3 id="Selectedl"></h3>							
+						</div>
+					</div>
+
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 nopadding">
+						<div class="row middle">
+							<h3 id="Choose"> FACTION PERK: Draw a card from your deck whenever you win a round </h3>
+						</div>
+					</div>
+
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 nopadding">
+						<div class="row middle">
+							<h2 id="CardCollectionr"> Cards in Deck </h2>
+							<h3 id="Selectedr"> ALL CARDS </h3>							
+						</div>
+					</div>
+					
+				</div>
+
+				<div class="row">
+					<div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 nopadding">
+						<div class="row">
+							<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 nopadding"></div>
+
+							<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 nopadding"></div>
+
+							<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 nopadding">
+								<img class="img-responsive" id="alll" onmousedown="return false" onmouseup="return false" src="img/Tavern/all.png" alt="" style="border:0">
+							</div>
+
+							<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 nopadding">
+								<img class="img-responsive" id="meleel" onmousedown="return false" onmouseup="return false" src="img/Tavern/melee.png" alt="" style="border:0">
+							</div>
+
+							<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 nopadding">
+								<img class="img-responsive" id="rangedl" onmousedown="return false" onmouseup="return false" src="img/Tavern/ranged.png" alt="" style="border:0">
+							</div>
+
+							<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 nopadding">
+								<img class="img-responsive" id="siegel" onmousedown="return false" onmouseup="return false" src="img/Tavern/seige.png" alt="" style="border:0">
+							</div>
+
+							<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 nopadding">
+								<img class="img-responsive" id="herol" onmousedown="return false" onmouseup="return false" src="img/Tavern/hero.png" alt="" style="border:0">
+							</div>
+
+							<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 nopadding">
+								<img class="img-responsive" id="weatherl" onmousedown="return false" onmouseup="return false" src="img/Tavern/weather.png" alt="" style="border:0">
+							</div>
+
+							<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 nopadding">
+								<img class="img-responsive" id="speciall" onmousedown="return false" onmouseup="return false" src="img/Tavern/special.png" alt="" style="border:0">
+							</div>
+
+							<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 nopadding"></div>
+
+							<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 nopadding"></div>
+
+							<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 nopadding"></div>
+						</div>
+
+						<div class="row" id="bottoml"></div>
+
+						<div class="modal fade" id="myModal1" role="dialog" aria-hidden="true">
+						    <div class = "modal-dialog">
+						      	<div class="modal-content">
+							        <div class="modal-body">
+							          <div class="container">
+								     	<div class="row img-hover">        
+							               <img class="col-lg-1 col-md-1 col-sm-1 col-xs-1 img-responsive arrowleft1" onmousedown="return false" onmouseup="return false" src="img/Tavern/arrow-circle-left.png">  
+
+							               <img id="unitleft1" class="col-lg-2 col-md-2 col-sm-2 col-xs-2 leftpics1" onmousedown="return false" onmouseup="return false">
+
+							               <img id="unitleft2" class="col-lg-2 col-md-2 col-sm-2 col-xs-2 leftpics2" onmousedown="return false" onmouseup="return false">
+
+							               <img id="unitmiddle" class="col-lg-2 col-md-2 col-sm-2 col-xs-2 middlepics" onmousedown="return false" onmouseup="return false">
+
+							               <img id="unitright2" class="col-lg-2 col-md-2 col-sm-2 col-xs-2 rightpics2" onmousedown="return false" onmouseup="return false">
+
+							               <img id="unitright1" class="col-lg-2 col-md-2 col-sm-2 col-xs-2 rightpics1" onmousedown="return false" onmouseup="return false">
+
+							               <img class="col-lg-1 col-md-1 col-sm-1 col-xs-1 img-responsive arrowright1" onmousedown="return false" onmouseup="return false" src="img/Tavern/arrow-circle-right.png">
+							             </div>
+							          </div>
+							        </div>
+
+							        <div class="modal-footer">
+							        	<div class="row">
+							        		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></div>	
+
+							        		<div id="unitfooter" class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+							        			<img id="unitmiddlefooter" onmousedown="return false" onmouseup="return false"> 
+							        		</div>	
+
+							        		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></div>	
+
+							          		<button id="unitmodalclose" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							          	</div>
+							        </div>	
+							    </div>			      
+						    </div>
+						</div>					
+
+					</div>
+
+
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 nopadding">
+						<h3 id = "middletext"> Leader </h3>
+						<div class="leaderboard" id="middletop" data-toggle="modal" data-target="#myModal"></div>
+
+						<div class="modal fade" id="myModal" role="dialog" aria-hidden="true">
+						    <div class = "modal-dialog">
+						      	<div class="modal-content">
+							        <div class="modal-body">
+							          <div class="container">
+								     	<div class="row img-hover">        
+							               <img class="col-lg-1 col-md-1 col-sm-1 col-xs-1 img-responsive arrowleft" onmousedown="return false" onmouseup="return false" src="img/Tavern/arrow-circle-left.png">  
+
+							               <img id="leadleft1" class="col-lg-2 col-md-2 col-sm-2 col-xs-2 leftpics1" onmousedown="return false" onmouseup="return false">
+
+							               <img id="leadleft2" class="col-lg-2 col-md-2 col-sm-2 col-xs-2 leftpics2" onmousedown="return false" onmouseup="return false">
+
+							               <img id="leadmiddle" class="col-lg-2 col-md-2 col-sm-2 col-xs-2 middlepics" onmousedown="return false" onmouseup="return false">
+
+							               <img id="leadright2" class="col-lg-2 col-md-2 col-sm-2 col-xs-2 rightpics2" onmousedown="return false" onmouseup="return false">
+
+							               <img id="leadright1" class="col-lg-2 col-md-2 col-sm-2 col-xs-2 rightpics1" onmousedown="return false" onmouseup="return false">
+
+							               <img class="col-lg-1 col-md-1 col-sm-1 col-xs-1 img-responsive arrowright" onmousedown="return false" onmouseup="return false" src="img/Tavern/arrow-circle-right.png">
+							             </div>
+							          </div>
+							        </div>
+
+							        <div class="modal-footer">
+							        	<div class="row">
+							        		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></div>	
+
+							        		<div id="footer" class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+							        			<img id="middlefooter" onmousedown="return false" onmouseup="return false"> 
+							        		</div>	
+
+							        		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></div>	
+
+							          		<button id="modalclose" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							          	</div>
+							        </div>	
+							    </div>			      
+						    </div>
+						</div>
+
+
+						<div class="row" id="middlebelow">
+							<div id="totalcardsindeck">
+								</h4> Total cards in deck </h4>
+								<div class="row">
+									<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 nopadding">
+										<img class="img-responsive" style="float:right; padding-right: 5px;" src="img/Tavern/cardsindeck.png">
+									</div>
+
+									<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 nopadding">
+										<h4 class="nopadding" id="indeck" style="float:left; font-size:22px; padding-left: 5px;"></h4>
+									</div>
+								</div>
+							</div>
+
+							<div id="numberofunitcards">
+								</h4> Number of Unit Cards </h4>
+								<div class="row">
+									<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 nopadding">
+										<img class="img-responsive" style="float:right; padding-right: 5px;" src="img/Tavern/unitcards.png">
+									</div>
+
+									<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 nopadding">
+										<h4 class="nopadding" id="number" style="float:left; font-size:22px; padding-left: 5px; padding-top: 5px; padding-bottom: 5px;"></h4>
+									</div>
+								</div>
+							</div>
+
+							<div id="specialcards">
+								</h4> Special Cards </h4>
+								<div class="row">
+									<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 nopadding">
+										<img class="img-responsive" style="float:right;" src="img/Tavern/specialcards.png">
+									</div>
+
+									<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 nopadding">
+										<h4 class="nopadding" id="special" style="float:left; font-size:22px; padding-left: 5px; padding-top: 3px; padding-bottom: 3px;"></h4>
+									</div>
+								</div>
+							</div>
+
+							<div id="totalunitcardstrength">
+								</h4> Total Unit Card Strength </h4>
+								<div class="row">
+									<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 nopadding">
+										<img class="img-responsive" style="float:right; padding-right: 5px;" src="img/Tavern/cardstrength.png">
+									</div>
+
+									<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 nopadding">
+										<h4 class="nopadding" id="cardstrength" style="float:left; font-size:22px; padding-left: 5px; padding-top: 2px; padding-bottom: 2px;"></h4>
+									</div>
+								</div>
+							</div>
+
+							<div id="herocards">
+								</h4> Hero Cards </h4>
+								<div class="row">
+									<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 nopadding">
+										<img class="img-responsive" style="float:right; padding-right: 5px;" src="img/Tavern/cardhero.png">
+									</div>
+
+									<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 nopadding">
+										<h4 class="nopadding" id="hero" style="float:left; font-size:22px; padding-left: 5px; padding-top: 2px; padding-bottom: 2px;"></h4>
+									</div>
+								</div>
+							</div>						
+						</div>
+
+						<div class="row" id="middle">
+							<button id="add" type="button">Click Me!</button>
+						</div>
+
+						<div class="row" id="middle1">
+							<button id="game" type="button">Match</button>
+						</div>
+
+						
+					</div>
+
+					<div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 nopadding">
+						<div class="row">
+							<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 nopadding"></div>
+
+							<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 nopadding"></div>
+
+							<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 nopadding"></div>
+
+							<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 nopadding">
+								<img class="img-responsive" id="allr" onmousedown="return false" onmouseup="return false" src="img/Tavern/all.png" alt="" style="border:0">
+							</div>
+
+							<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 nopadding">
+								<img class="img-responsive" id="meleer" onmousedown="return false" onmouseup="return false" src="img/Tavern/melee.png" alt="" style="border:0">
+							</div>
+
+							<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 nopadding">
+								<img class="img-responsive" id="rangedr" onmousedown="return false" onmouseup="return false" src="img/Tavern/ranged.png" alt="" style="border:0">
+							</div>
+
+							<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 nopadding">
+								<img class="img-responsive" id="sieger" onmousedown="return false" onmouseup="return false" src="img/Tavern/seige.png" alt="" style="border:0">
+							</div>
+
+							<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 nopadding">
+								<img class="img-responsive" id="heror" onmousedown="return false" onmouseup="return false" src="img/Tavern/hero.png" alt="" style="border:0">
+							</div>
+
+							<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 nopadding">
+								<img class="img-responsive" id="weatherr" onmousedown="return false" onmouseup="return false" src="img/Tavern/weather.png" alt="" style="border:0">
+							</div>
+
+							<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 nopadding">
+								<img class="img-responsive" id="specialr" onmousedown="return false" onmouseup="return false" src="img/Tavern/special.png" alt="" style="border:0">
+							</div>
+
+							<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 nopadding"></div>
+
+							<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 nopadding"></div>
+						</div>				
+
+						<div class="row">
+							<ul class="row no-flickr" id="bottomr"  style="height:500px">
+								
+							</ul>
+						</div>
+
+
+					</div>
+				</div>
+			</div>	
+		</div>
+
+		<!-- LIVE CHAT -->
+		<div id="live-chat">		
+			<header class="clearfix">
+				<h4>Welcome <span id="username" style="color: yellow"><%= username %></span> !</h4>
+			</header>
+
+			<div class="chat">				
+				<div class="chat-history">					
+					<div class="chat-message clearfix">
+						<div class="chat-message-content clearfix">
+							<ul id="messages"></ul>
+						</div>
+					</div> 
+				</div> 
+
+				<form action="">
+		    		<input type="text" id="m" autocomplete="off" /><button>Send</button>
+				</form>
+			</div>
+		</div>
+
+
+
+
+
+
+		
+	</body>
+</html>

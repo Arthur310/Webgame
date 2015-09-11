@@ -1,0 +1,136 @@
+<!-- This is the Cards.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>CARD</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		<link rel="shortcut icon" href="img/favicon.ico">
+		<link href="css/Decks.css" rel="stylesheet">
+		<script src="js/DeckSelection.js"></script>
+	</head>
+	
+	<body>
+		<!-- Loading screen -->
+		<div class="loader-wrap">
+			<div class="loader">
+				<div class="box-1 box"></div>
+				<div class="box-2 box"></div>
+				<div class="box-3 box"></div>
+				<div class="box-4 box"></div>
+				<div class="box-5 box"></div>
+			</div>
+		</div>
+	
+		<!-- Top Container -->
+		<div class="container">
+			<div class="row vertical-align">
+				<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+					<div class="clearfix">
+						<img class="Weather" src="img/Faction Images/Weather.png">	
+					</div>
+				</div>
+					
+				<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12"></div>	
+					
+				<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+					<img class="Monster" src="img/Faction Images/Monster.png">			
+				</div>
+			</div>
+		</div>
+		
+		<!-- Middle container -->
+		<div class="container-fluid ">
+			<div class="row">
+				<div class="Left col-lg-4 col-md-12 col-sm-12 col-xs-12">
+					<div class="clearfix">
+						<img class="Neutral" src="img/Faction Images/Neutral.png" alt="" style="border:0">	
+					</div>
+				</div>
+					
+				<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+					<div class="selection">
+						<div class="buttonContainer table-cell" style="width: 100px; height: 100px; z-index: 10000; margin-left: auto;
+							margin-right: auto;">
+							<ul id="flyoutButton" style="z-index: 10000">
+								<li style="width: 60px; height: 60px; position: absolute; margin-left: 20px; margin-top: 20px;" class="flyoutButton" id="flyout0">
+									<a href="/Monster" class="round red no-flickr">
+										<img class="round" src="img/Faction Icons/MonsterSymbol.png" alt="" style="border:0">
+										<span class="round no-flickr">Monster <br> Card Deck</span>
+									</a>
+								</li>
+								
+								<li style="width: 60px; height: 60px; position: absolute; margin-left: 20px; margin-top: 20px;" class="flyoutButton" id="flyout1">
+									<a href="/Nilfgaardian" class="round black no-flickr">
+										<img class="round" src="img/Faction Icons/NifgaadianSymbol.png" alt="" style="border:0">
+										<span class="round no-flickr">Nilfgaardian <br> Empire Card <br> Deck</span>
+									</a>	
+								</li>
+								
+								<li style="width: 60px; height: 60px; position: absolute; margin-left: 20px; margin-top: 20px;" class="flyoutButton" id="flyout2">
+									<a href="/NorthernRealms" class="round blue">
+										<img class="round" src="img/Faction Icons/NorthernRealmSymbol.png" alt="" style="border:0">
+										<span class="round no-flickr">Northern <br> Realms <br> Card Deck</span>
+									</a>
+								</li>
+								
+								<li style="width: 60px; height: 60px; position: absolute; margin-left: 20px; margin-top: 20px;" class="flyoutButton" id="flyout3">
+									<a href="/Scoiatale" class="round green no-flickr">
+										<img class="round" src="img/Faction Icons/ScoiatelSymbol.png" alt="" style="border:0">
+										<span class="round no-flickr">Scoia'tael Card Deck</span>
+									</a>
+								</li>
+								
+								<li style="width: 60px; height: 60px; position: absolute; margin-left: 20px; margin-top: 20px;" class="flyoutButton" id="flyout4">
+									<a href="/Neutral" class="round white no-flickr">
+										<img class="round" src="img/Faction Icons/NeutralSymbol.png" alt="" style="border:0">
+										<span class="round no-flickr">Neutral <br> Card Type</span>
+									</a>
+								</li>
+								
+								
+								<li style="width: 60px; height: 60px; position: absolute; margin-left: 20px; margin-top: 20px;" class="flyoutButton" id="flyout5">
+									<a href="/Special" class="round yellow no-flickr">
+										<img class="round" src="img/Faction Icons/WeatherSymbol.png" alt="" style="border:0">
+										<span class="round no-flickr">Special <br> Card Type</span>
+									</a>
+								</li>
+								
+								<li id="mainButton" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; margin-left: auto; margin-right: auto;">
+									<img class="mainround mainround-hover no-flickr " src="img/Faction Icons/Geralt.png" alt="" style="border:0">
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+		
+				<div class="Right col-lg-4 col-md-12 col-sm-12 col-xs-12">
+						<img class="Nilfgaardian" src="img/Faction Images/Nilfgaardian.png" alt="" style="border:0">	
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Bottom container -->
+		<div class="container">
+			<div class="row vertical-align">
+				<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+					<div class="clearfix">
+						<img class="Scoiatale" src="img/Faction Images/Scoiatale.png" alt="" style="float:left; border:0">	
+					</div>
+				</div>
+					
+				<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12"></div>
+					
+				<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+					<img class="NorthernRealm" src="img/Faction Images/NorthernRealm.png" alt="" style="float:left; border:0">			
+				</div>
+			</div>
+		</div>	
+	</body>
+</html>
